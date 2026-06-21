@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 轻量导航 | 再次出发</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f7f9fc;
+            color: #1f2a3f;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 760px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 2rem 0 4rem;
+            flex: 1;
+        }
+
+        /* 顶部导航 – 极简窄条 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 1.2rem 0 0.8rem;
+            border-bottom: 1px solid #dce3ec;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .site-name {
+            font-weight: 500;
+            font-size: 1.25rem;
+            letter-spacing: 0.3px;
+            color: #1e293b;
+        }
+
+        .site-name em {
+            font-style: normal;
+            color: #54708f;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3d4f66;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover {
+            color: #1f2a3f;
+        }
+
+        /* hero 区 – 温和的再次问候 */
+        .hero {
+            margin-bottom: 3.8rem;
+        }
+
+        .hero h1 {
+            font-weight: 400;
+            font-size: 2.2rem;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: #19212e;
+        }
+
+        .hero h1 small {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #546a84;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #2f3d54;
+            max-width: 640px;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero .reminder {
+            background: #edf2f9;
+            padding: 0.8rem 1.2rem;
+            border-radius: 28px;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #1e2b3e;
+        }
+
+        /* 核心介绍 – 收藏与再次访问 */
+        .intro-block {
+            margin-bottom: 3.6rem;
+        }
+
+        .intro-block h2 {
+            font-weight: 400;
+            font-size: 1.6rem;
+            border-left: 3px solid #7d93b0;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .intro-block p {
+            margin-bottom: 1rem;
+        }
+
+        .intro-block a {
+            color: #1e293b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b3c4da;
+        }
+
+        .intro-block a:hover {
+            text-decoration-color: #1e293b;
+        }
+
+        /* 三个场景模块 */
+        .scenes {
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+            margin-bottom: 3.8rem;
+        }
+
+        .scene-card {
+            background-color: #ffffff;
+            padding: 1.8rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.2s;
+        }
+
+        .scene-card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .scene-card h3 {
+            font-weight: 500;
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+            color: #1a2538;
+        }
+
+        .scene-card p {
+            color: #2f3f58;
+            font-size: 0.98rem;
+        }
+
+        .scene-card .tag {
+            display: inline-block;
+            margin-top: 0.9rem;
+            font-size: 0.8rem;
+            color: #657b99;
+            letter-spacing: 0.4px;
+        }
+
+        /* 常见说明 / FAQ 摘要 */
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+            margin-bottom: 2rem;
+        }
+
+        .faq-summary h4 {
+            font-weight: 500;
+            font-size: 1.15rem;
+            margin-bottom: 1.2rem;
+            color: #1a2538;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #1f2a3f;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #3b4a62;
+            margin: 0;
+        }
+
+        .faq-item a {
+            color: #1e293b;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #b3c4da;
+        }
+
+        .faq-item a:hover {
+            text-decoration-color: #1e293b;
+        }
+
+        /* 底部 */
+        .footer-note {
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
+            color: #738aa8;
+            text-align: left;
+            border-top: 1px solid #e3eaf2;
+            padding-top: 1.8rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .page {
+                width: 92%;
+                padding: 1.2rem 0 3rem;
+            }
+
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+                margin-bottom: 2rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+                flex-wrap: wrap;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero h1 small {
+                font-size: 1.3rem;
+                display: block;
+                margin-top: 0.2rem;
+            }
+
+            .scene-card {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .faq-summary {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .hero .reminder {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .intro-block h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+        <span class="site-name">✦ <em>爱游戏</em> · 再访</span>
+        <div class="nav-links">
+            <a href="#">收藏</a>
+            <a href="#">场景</a>
+            <a href="#">说明</a>
+        </div>
+    </nav>
+
+    <!-- hero 温和问候 -->
+    <section class="hero">
+        <h1>
+            又见面了<br>
+            <small>收藏此刻，保持关注</small>
+        </h1>
+        <p>
+            每次回到这里，都像翻开一本熟悉的书。不需要刻意寻找，<strong>爱游戏</strong> 一直在你喜欢的地方等你。
+        </p>
+        <div class="reminder">
+            ⚈ 下次想快速回来？把页面加入书签，或记下这个安静的角落。
+        </div>
+    </section>
+
+    <!-- 核心介绍：收藏与再次访问 -->
+    <section class="intro-block">
+        <h2>收藏，是为了不忘记</h2>
+        <p>
+            一个顺手的网站，就像日常路过的小店。也许你已经在不同设备上访问过 <a href="https://zhsite-aiyouxi.com.cn">爱游戏</a>，但真正让它成为习惯的，是每一次不经意的“再回来”。
+        </p>
+        <p>
+            这里没有复杂的入口，也没有拥挤的跳转。当你需要那个熟悉的感觉时，收藏夹里的名字会提醒你：它在。
+        </p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes">
+        <div class="scene-card">
+            <h3>📌 场景 · 收藏夹里的老朋友</h3>
+            <p>
+                某个下午，忽然想起之前看的页面。打开书签，找到「爱游戏」—— 一切都和记忆中一样简洁。不必重新适应，因为它始终没变过。
+            </p>
+            <span class="tag">再次访问 · 熟悉感</span>
+        </div>
+        <div class="scene-card">
+            <h3>🔖 场景 · 持续关注的方式</h3>
+            <p>
+                你不一定每天打开，但你知道它一直在那里。偶尔回来看看，内容自然更新，节奏依旧温和。关注，有时候只是保留一个入口。
+            </p>
+            <span class="tag">长期陪伴 · 低打扰</span>
+        </div>
+        <div class="scene-card">
+            <h3>🌱 场景 · 日常间隙的落脚点</h3>
+            <p>
+                在浏览器的地址栏输入几个字母，或者直接点击收藏—— 这个动作很轻，但足以把你带回熟悉的页面。没有压力，只有一种“又来了”的安心。
+            </p>
+            <span class="tag">轻量习惯 · 自然返回</span>
+        </div>
+    </div>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <div class="faq-summary">
+        <h4>常见说明</h4>
+        <div class="faq-item">
+            <strong>为什么建议收藏这个页面？</strong>
+            <p>
+                收藏是再次访问最快的方式。你可以在浏览器菜单中把当前页面加入书签，下次直接从书签栏打开 <a href="https://zhsite-aiyouxi.com.cn">爱游戏</a>，就像回到一个安静的读者角。
+            </p>
+        </div>
+        <div class="faq-item">
+            <strong>如果我想分享给朋友？</strong>
+            <p>
+                直接分享链接 https://zhsite-aiyouxi.com.cn 就好。没有多余的话，对方打开就是你所熟悉的那个样子。
+            </p>
+        </div>
+        <div class="faq-item">
+            <strong>内容会频繁变动吗？</strong>
+            <p>
+                不会。这里保持克制的更新节奏，每次变化都基于温和的调整，而不是突然的重构。你始终能找到最初收藏它的理由。
+            </p>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        <span>保持关注 · 爱游戏 </span>
+    </div>
+</div>
+</body>
+</html>
