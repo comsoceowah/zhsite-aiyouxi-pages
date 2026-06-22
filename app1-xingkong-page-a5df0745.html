@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星空体育 · 信息索引专题</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #fafbfc;
+      color: #1e2329;
+      line-height: 1.7;
+    }
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    /* hero */
+    .hero {
+      padding: 4rem 0 2.5rem;
+      border-bottom: 1px solid #eaeef2;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #0b1219;
+      margin-bottom: 0.75rem;
+    }
+    .hero .sub {
+      font-size: 1rem;
+      color: #5a6874;
+      max-width: 520px;
+      border-left: 3px solid #cbd5e0;
+      padding-left: 1rem;
+    }
+    /* 背景说明 — 窄卡片式 */
+    .context {
+      margin: 2.5rem 0;
+      background: #f4f6f9;
+      padding: 1.6rem 2rem;
+      border-radius: 16px;
+      font-size: 0.94rem;
+      color: #2c3b47;
+      border: 1px solid #e2e8ef;
+    }
+    .context strong {
+      font-weight: 600;
+      color: #0e1c2a;
+    }
+    /* 三段介绍 */
+    .intro-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 2.8rem 0;
+    }
+    .intro-item {
+      border-left: 2px solid #d4dee8;
+      padding-left: 1.3rem;
+    }
+    .intro-item h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #13212f;
+      margin-bottom: 0.35rem;
+    }
+    .intro-item p {
+      font-size: 0.93rem;
+      color: #314452;
+      margin-top: 0.2rem;
+    }
+    .intro-item .meta-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      background: #e9edf2;
+      color: #3a4a58;
+      padding: 0.1rem 0.6rem;
+      border-radius: 20px;
+      margin-top: 0.4rem;
+      font-weight: 500;
+    }
+    /* 页尾提示 */
+    .footer-note {
+      margin: 3.5rem 0 4rem;
+      padding: 1.6rem 0;
+      border-top: 1px solid #e0e6ed;
+      font-size: 0.9rem;
+      color: #3c4d5c;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+    .footer-note a {
+      color: #0f283d;
+      text-decoration: none;
+      border-bottom: 1px solid #b6c8d6;
+      font-weight: 500;
+      transition: border-color 0.15s;
+    }
+    .footer-note a:hover {
+      border-bottom-color: #0f283d;
+    }
+    .foot-credit {
+      color: #7b8b9a;
+      font-size: 0.8rem;
+    }
+    /* 响应式 */
+    @media (max-width: 520px) {
+      .hero h1 { font-size: 2rem; }
+      .context { padding: 1.2rem 1.2rem; }
+      .footer-note { flex-direction: column; align-items: flex-start; }
+    }
+    /* 辅助 */
+    .small-break { margin-top: 0.3rem; }
+    .hr-light { border: 0; height: 1px; background: #e4eaf0; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <header class="hero">
+    <h1>星空体育 · 资料索引</h1>
+    <div class="sub">聚合信息 · 结构化归档 · 持续梳理</div>
+  </header>
+
+  <!-- 背景说明 -->
+  <section class="context">
+    <strong>专题背景</strong><br>
+    本页面向对体育数据、赛事信息及平台资料有查阅需求的用户。以索引与整理为出发点，将分散信息按主题集中呈现。<br>
+    <span style="display:inline-block; margin-top:0.5rem;">当前收录方向：赛事结构、平台功能、内容更新节点。以下为三个主要模块的摘要。</span>
+  </section>
+
+  <!-- 三段自然介绍 -->
+  <div class="intro-grid">
+
+    <div class="intro-item">
+      <h2>01 · 赛事内容层次</h2>
+      <p>围绕主流联赛与杯赛，按赛季、阶段、轮次建立基础信息链。从赛程、积分到数据统计，形成可对照的条目。适合需要快速定位特定赛事节点的浏览场景。</p>
+      <span class="meta-tag">结构化列表</span>
+    </div>
+
+    <div class="intro-item">
+      <h2>02 · 模块与功能索引</h2>
+      <p>将 <a href="https://app1-xingkong.com" style="color:#0f283d; text-decoration:underline; text-decoration-color:#b6c8d6; text-underline-offset:0.2em;">星空体育</a> 的功能区域拆分为几个主要分类：实时数据、历史档案、赛事筛选、关注列表。每个分类下记录对应的入口位置与更新频次。</p>
+      <span class="meta-tag">分类归档</span>
+    </div>
+
+    <div class="intro-item">
+      <h2>03 · 信息更新与维护</h2>
+      <p>内容维护遵循按周更新的节奏，对赛果、排名、伤停等动态信息做增量补充。同时保留历史版本对照，便于回溯。本次索引页面作为长期整理的一部分，持续优化条目颗粒度。</p>
+      <span class="meta-tag">版本对照</span>
+    </div>
+
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <footer class="footer-note">
+    <span>如需查看完整资料体系，可延伸至主体平台</span>
+    <span>
+      <a href="https://app1-xingkong.com">星空体育</a>
+      <span class="foot-credit"> · 信息索引 v1.3</span>
+    </span>
+  </footer>
+
+</div>
+</body>
+</html>
